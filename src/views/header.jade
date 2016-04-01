@@ -1,0 +1,58 @@
+doctype html
+html(lang="fr", ng-app="%module%")
+  head
+    block head
+    meta(charset="utf-8")
+    meta(name="google-site-verification" content="A6CA8SjMaKex1u0Twv2PMcfaajA9mLe547933XIgrO8")
+    link(rel="stylesheet", href="/%styles%/main.css")
+    meta(name="viewport", content="initial-scale=1.0, width:device-width")
+    if analytics
+      // Google Analytics
+      script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68212799-1', 'auto');
+        ga('send', 'pageview', location.pathname);
+      // End Google Analytics
+    script(src="/%scripts%/vendor.js")
+    script(src="/%scripts%/app.js")
+  block vars
+  body#body.coactcss(class=bgPage)
+    if fb
+      #fb-root
+        script.
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+
+    block component
+
+    footer
+      .container
+        .row
+          .col-md-2.footer-brand
+            img(src="/img/CoActWhite.svg" onerror="this.onerror=null; this.src='/img/CoActWhite.png'")
+          .col-md-2.adress
+            h1 CoAct
+            p(style='white-space:pre;')
+              | c/o La Ruche
+              | 84 quai de Jemmapes
+              | F-75010 Paris
+            a(
+              href="mailto:contact@thecollaboractionfactory.com?Subject=Contact%20Coact"
+              target="_top"
+            ) contact@coact.fr
+
+
+        .row.legals
+          .col-md-10.col-md-offset-1
+            h1 Mentions légales
+            p
+              | SAS au capital de 6000€ - RCS Paris 813 572 78 - | SIRET 813 572 781 00017 - NAF 7022Z

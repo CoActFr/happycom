@@ -1,0 +1,78 @@
+extends ../header.jade
+block head
+  title Coact - The Collabor'Action Factory
+  meta(name="description" content="Coact est un laboratoire opérationnel de pratiques collaboratives. Développer les pratiques collaboratives au sein de vos organisations")
+
+block vars
+  - var nav = 'landing'
+block component
+
+  #logo.container
+    .page-header
+      img.img-responsive(src="img/CoAct.svg" onerror="this.onerror=null; this.src='img/CoAct.png'")
+
+  #three-fork(ng-controller="landingCtrl")
+    #catch(ng-show="landingSlider.slides.catch")
+      .jumbotron.catch
+        .container.marketing
+          .row
+            .col-md-12
+              h1 Travaillons ensemble
+              p
+                | Optimisons la performance des hommes et des organisations
+                | grâce à la collaboration
+          .row.three-fork
+            .col-md-4
+              .glyph-holder
+                .glyph.glyph-personnel
+              p
+                a.btn.btn-default(ng-click='landingSlider.goTo("personnel")' style='white-space:pre-line;') Exploitez toutes les ressources de vos équipes
+            .col-md-4
+              .glyph-holder
+                .glyph.glyph-organisation
+              p
+                a.btn.btn-default(ng-click='landingSlider.goTo("organisation")' style='white-space:pre-line;')
+                  | Rendez votre organisation
+                  | "apprenante"
+            .col-md-4
+              .glyph-holder
+                .glyph.glyph-technologie
+              p
+                a.btn.btn-default(ng-click='landingSlider.goTo("technologie")' style='white-space:pre-line;') Mettez en place les outils de collaboration appropriés
+    #personnel(ng-show="landingSlider.slides.personnel")
+      .return(ng-click='landingSlider.goTo("catch")') ⇦ Retour
+      .jumbotron.appeal
+        .container.marketing
+          .row
+            .col-md-12
+              h2 Exploitez toutes les ressources de vos équipes
+              p
+                | Grâce à une meilleure connaissance de soi, de son propre fonctionnement
+                | en condition normale et sous stress, de nos attentes vis-à-vis de notre
+                | environnement et des personnes avec lesquelles nous communiquons
+              p
+                a.btn.btn-default(href='/personnel') En apprendre plus
+    #organisation(ng-show="landingSlider.slides.organisation")
+      .return(ng-click='landingSlider.goTo("catch")') ⇦ Retour
+      .jumbotron.appeal
+        .container.marketing
+          .row
+            .col-md-12
+              h2 Rendez votre organisation "apprenante"
+              p
+                | Par la mise en place de processus collaboratifs prenant en compte
+                | les besoins de plus en plus rapides de gestion du changement
+              p
+                a.btn.btn-default(href='/organisation') En apprendre plus
+    #technologie(ng-show="landingSlider.slides.technologie")
+      .return(ng-click='landingSlider.goTo("catch")') ⇦ Retour
+      .jumbotron.appeal
+        .container.marketing
+          .row
+            .col-md-12
+              h2 Mettez en place les outils de collaboration appropriés
+              p
+                | Par la mise en place de technologies favorisant la collaboration dès
+                | lors que celles-ci sont soutenues par les collaborateurs
+              p
+                a.btn.btn-default(href='/technologie') En apprendre plus

@@ -1,0 +1,11 @@
+{
+  "name": "coact",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "*",
+    "angular-animate": "1.4.7",
+    "bootstrap": "3.3.5",
+    "lodash": "*",
+    "seiyria-bootstrap-slider": "5.3.3"
+  }
+}
